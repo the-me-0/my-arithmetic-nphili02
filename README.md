@@ -2,7 +2,7 @@
 
 [![PyPI - Version](https://img.shields.io/pypi/v/my-arithmetic-nphili02.svg)](https://pypi.org/project/my-arithmetic-nphili02)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/my-arithmetic-nphili02.svg)](https://pypi.org/project/my-arithmetic-nphili02)
-![coverage](https://gitlab.univ-lr.fr/nphili02/my-arithmetic-nphili02/badges/main/coverage.svg?job=coverage)
+![coverage](https://gitlab.univ-lr.fr/nphili02/my-arithmetic-nphili02/badges/main/coverage.svg?job=test)
 
 -----
 
