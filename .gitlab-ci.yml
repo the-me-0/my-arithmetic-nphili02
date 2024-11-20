@@ -1,7 +1,6 @@
 stages:
   - test
 
-# Étape de test (si vous souhaitez tester avec hatch après installation)
 test:
   stage: test
   tags:
@@ -9,4 +8,5 @@ test:
   script:
     - pip install --upgrade pip
     - pip install hatch
-    - hatch test
+    - hatch test --cover
+  coverage: 'TOTAL\s+[0-9]+\s+[0-9]+\s+[0-9]+\s+[0-9]+\s+([0-9]+)%'
