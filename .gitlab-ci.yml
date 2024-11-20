@@ -1,9 +1,24 @@
 stages:
+  - setup
   - test
 
+# Étape de configuration
+setup:
+  stage: setup
+  tags:
+    - docker
+  script:
+    - pip install --upgrade pip
+    - pip install hatch
+    - hatch version
+
+# Étape de test (si vous souhaitez tester avec hatch après installation)
 test:
   stage: test
   tags:
     - docker
   script:
-    - echo "Running CI pipeline on GitLab CI"
+    - pip install --upgrade pip
+    - pip install hatch
+    - hatch install
+    - hatch test
