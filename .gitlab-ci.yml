@@ -1,6 +1,7 @@
 stages:
   - test
   - build
+  - deploy
 
 test:
   stage: test
@@ -24,3 +25,12 @@ build:
   artifacts:
     paths:
       - dist/*.whl  # Save the built wheel files as artifacts
+
+deploy:
+  stage: deploy
+  only:
+    - tags
+  script:
+    - echo "my-arithmetic-$USER deployment on stable servers"
+    - ls -l dist/
+    - cat dist/*
