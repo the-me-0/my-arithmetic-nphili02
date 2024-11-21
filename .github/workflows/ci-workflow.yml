@@ -33,7 +33,8 @@ jobs:
 
       - name: Upload coverage results
         if: success()
-        run: echo "Coverage: $(hatch test --cover)"
+        run: |
+          echo "Coverage: $(hatch test --cover)"
 
   build:
     runs-on: ubuntu-latest
