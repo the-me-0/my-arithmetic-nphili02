@@ -1,0 +1,32 @@
+name: Build and Deploy Documentation
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install sphinx sphinx-rtd-theme
+
+      - name: Build documentation
+        run: |
+          sphinx-build -b html docs/ docs/_build
+
+      - name: Upload docs to Read the Docs (optional)
+        if: success()
+        run: |
+          curl -X POST https://readthedocs.org/api/v2/webhook/my-arithmetic-nphili02/283804/ -H "Authorization: Token gNTqc9Wu0tjyHCO4Pht02gfl2XzcwMxq"
