@@ -2,6 +2,7 @@ stages:
   - test
   - build
   - deploy
+  - deploy_to_develop
 
 test:
   stage: test
@@ -33,6 +34,18 @@ deploy:
   tags:
     - docker
   script:
-    - echo "my-arithmetic-$USER deployment on stable servers"
+    - echo "my-arithmetic-nphili02 deployment on stable servers"
     - ls -l dist/
     - cat dist/*
+
+deploy_to_develop:
+  stage: deploy_to_develop
+  only:
+    - develop
+  tags:
+    - docker
+  script:
+    - echo "my-arithmetic-nphili02 deployment on develop servers"
+    - ls -l dist/  # Afficher le contenu du dossier dist
+    - cat dist/*  # Afficher le contenu des fichiers .whl générés
+
