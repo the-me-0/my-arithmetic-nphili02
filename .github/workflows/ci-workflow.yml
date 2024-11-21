@@ -73,6 +73,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Download built wheel artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: wheel
+
       - name: Deploy to stable servers
         run: |
           echo "my-arithmetic-nphili02 deployment on stable servers"
@@ -86,6 +91,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Download built wheel artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: wheel
 
       - name: Deploy to develop servers
         run: |
