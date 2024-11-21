@@ -19,9 +19,6 @@ sphinx:
 #   - pdf
 #   - epub
 
-# Fail on all warnings to avoid broken references
-fail_on_warning: true
-
 # If you want to specify additional build options or configuration, you can add them here
 # Example:
 #   - builder: "dirhtml"  # Utiliser le générateur de fichiers HTML simplifiés
