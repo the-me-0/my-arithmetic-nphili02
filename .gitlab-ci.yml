@@ -30,6 +30,8 @@ deploy:
   stage: deploy
   only:
     - tags
+  tags:
+    - docker
   script:
     - echo "my-arithmetic-$USER deployment on stable servers"
     - ls -l dist/
