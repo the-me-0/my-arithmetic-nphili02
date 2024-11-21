@@ -14,12 +14,6 @@ build:
 sphinx:
   configuration: docs/conf.py
 
-# Declare the Python requirements required to build your documentation
-# This will install the dependencies listed in your requirements.txt
-python:
-  install:
-    - pip install sphinx-rtd-theme
-
 # Optionally build your docs in additional formats such as PDF and ePub
 # formats:
 #   - pdf
