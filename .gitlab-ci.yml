@@ -1,5 +1,6 @@
 stages:
   - test
+  - build
 
 test:
   stage: test
@@ -7,6 +8,19 @@ test:
     - docker
   script:
     - pip install --upgrade pip
-    - pip install hatch
-    - hatch test --cover
+    - pip install hatch hatch-vcs  # Install both hatch and hatch-vcs
+    - hatch test --cover  # Run tests with coverage
   coverage: '/\s+(\d+%)$/'
+
+build:
+  stage: build
+  tags:
+    - docker
+  script:
+    - pip install --upgrade pip
+    - pip install hatch hatch-vcs  # Install both hatch and hatch-vcs
+    - hatch version  # Ensure versioning is based on Git tags
+    - hatch build -t wheel  # Build the wheel, it will use the Git tag version
+  artifacts:
+    paths:
+      - dist/*.whl  # Save the built wheel files as artifacts
