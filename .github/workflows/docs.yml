@@ -29,4 +29,4 @@ jobs:
       - name: Upload docs to Read the Docs (optional)
         if: success()
         run: |
-          curl -X POST https://readthedocs.org/api/v2/webhook/my-arithmetic-nphili02/283804/ -H "Authorization: Token gNTqc9Wu0tjyHCO4Pht02gfl2XzcwMxq"
+          curl -X POST https://readthedocs.org/api/v2/webhook/my-arithmetic-nphili02/283804/ -H "Authorization: Token ${{ secrets.READTHEDOCS_TOKEN }}"
