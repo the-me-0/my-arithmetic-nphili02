@@ -30,5 +30,4 @@ jobs:
       - name: Upload coverage to Coveralls
         run: |
           hatch test --cover
-          ls -la
-          COVERALLS_REPO_TOKEN=${{ secrets.COVERALLS_TOKEN }} coveralls --merge=.coverage
+          COVERALLS_REPO_TOKEN=${{ secrets.COVERALLS_TOKEN }} coveralls
